@@ -1,0 +1,7 @@
+##File to download items that cannot be included in the apt-get
+dpkg -i /packages/Nessus-6.8.1-debian6_amd64.deb
+#install pycharm
+tar -zxvf -i /packages/pycharm-community-2016.2.1.tar.gz -C /packages/pycharm
+sudo rm ~/packages/pycharm-community-2016.2.1.tar.gz
+#add symlink for pycharm
+sudo ln -s /packages/pycharm-community-2016.2.1 /usr/bin/pycharm

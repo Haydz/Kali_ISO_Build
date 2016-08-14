@@ -1,3 +1,5 @@
+#NOT READY - still in draft mode #####
+
 
 #!/bin/bash
 
@@ -28,8 +30,8 @@ cd live-build-config
 #######END#####
 
 
-## SECTION TO ADD APT-GET packages
-cat <<EOF > ~/live-build-config/kali-config/variant-gnome/package-lists
+## SECTION TO ADD APT-GET packages to gnome (full install)
+cat <<EOF > ~/live-build-config/kali-config/variant-gnome/package-lists/kali.list.chroot
 #screenshots
 shutter
 #terminal emulator

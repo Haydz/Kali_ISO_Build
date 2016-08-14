@@ -1,0 +1,21 @@
+ cat <<EOF > /packages/ptf/config/ptf.config
+######################################
+# Main PTF Configuration file
+######################################
+#
+### This is the base directory where PTF will install the files
+BASE_INSTALL_PATH="/pentest"
+
+### Specify the output log file
+LOG_PATH="src/logs/ptf.log"
+
+### When using update_all, also update all of your debian/ubuntu modules
+AUTO_UPDATE="ON"
+
+#ignoring all modules except empire for testing
+### This will ignore modules and not install them - everything is comma separated and based on name - example: modules/exploitation/metasploit,modules/exploitation/set or entire module categories, like modules/code-audit/*,/modules/reporting/*
+IGNORE_THESE_MODULES="/modules/av-bypass/*,/modules/code-audit/*,/modules/exploitation/*,/modules/intelligence-gathering/*,/modules/password-recovery/*,/modules/pre-engagement/*,/modules/reporting/*,/modules/reversing/*,/modules/threat-modeling/*,/modules/vulnerability-analysis/*,/modules/windows-tools/*,/modules/wireless/*,modules/post-exploitation/crackmapexec,modules/post-exploitation/credcrack,modules/post-exploitation/dnscat2,modules/post-exploitation/egressbuster,modules/post-exploitation/ere,modules/post-exploitation/fcrackzip,/modules/post-exploitation/__init__,modules/post-exploitation/install_update_all,modules/post-exploitation/meterssh,modules/post-exploitation/owaspzsc,modules/post-exploitation/pivoter,modules/post-exploitation/poshc2,modules/post-exploitation/powersploit,modules/post-exploitation/pth-toolkit,modules/post-exploitationkek,/modules/post-exploitation/spraywmi,modules/post-exploitation/unicorn"
+EOF
+cd /packages/ptf/
+./ptf --update-all
+
